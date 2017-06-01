@@ -18,5 +18,8 @@
     "javascript"
   ],
   "author": "r3v3nan7",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "4.15.3"
+  }
 }
