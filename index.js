@@ -1,17 +1,23 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const handlebars = require('express-handlebars')
 
 mongoose.Promise = global.Promise
 let env = process.env.NODE_ENV || 'development'
 let port = process.env.PORT || 1337
 let app = express()
 
+app.engine('handlebars', handlebars({
+  defaultLayout: 'main'
+}))
+app.set('view engine', 'handlebars')
+
 app.get('/', (req, res) => {
   mongoose
     .connect('mongodb://localhost:27017/generictemplate')
     .then(() => {
       console.log('MongoDB ready')
-      res.send('Hi!')
+      res.render('index')
     })
 })
 
