@@ -1,0 +1,22 @@
+{
+  "name": "architecture-skeleton",
+  "version": "0.0.1",
+  "description": "Skeleton of project from live demo on lesson architecture and authentication",
+  "main": "index.js",
+  "engines": {
+    "node": "6.10.3"
+  },
+  "keywords": [
+    "skeleton",
+    "project",
+    "live",
+    "demo",
+    "lesson",
+    "architecture",
+    "authentication",
+    "nodejs",
+    "javascript"
+  ],
+  "author": "r3v3nan7",
+  "license": "MIT"
+}
