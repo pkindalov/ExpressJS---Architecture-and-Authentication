@@ -2,15 +2,11 @@ let env = process.env.NODE_ENV || 'development'
 
 let settings = require('./server/config/settings')[env]
 
-const express = require('express')
-let app = express()
+const app = require('express')()
 
 require('./server/config/database')(settings)
 require('./server/config/express')(app)
-
-app.get('/', (req, res) => {
-  res.render('index')
-})
+require('./server/config/routes')(app)
 
 app.listen(settings.port)
 console.log(`Server listen on port ${settings.port}`)
