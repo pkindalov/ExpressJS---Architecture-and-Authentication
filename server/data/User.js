@@ -13,10 +13,24 @@ let userSchema = new mongoose.Schema({
 })
 
 userSchema.method({
-  authenticate: (password) => {
-    return (encryption.generateHashedPassword(this.salt, password) === this.hashedPass)
+  authenticate: function (password) {
+    return encryption.generateHashedPassword(this.salt, password) === this.hashedPass
   }
 })
+
+// userSchema.method({
+
+//   authenticate: function (password) {
+//     let hashedPassword = encryption.generateHashedPassword(this.salt, password)
+
+//     if (hashedPassword === this.password) {
+//       return true
+//     }
+
+//     return false
+//   }
+
+// })
 
 let User = mongoose.model('User', userSchema)
 
